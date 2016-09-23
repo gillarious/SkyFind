@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Skyfind</title>
+		<link href='https://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" /> 
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=true_or_false"></script>
+		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initMap"
+			async defer></script>
+
+		<link rel="shortcut icon" type="image/png" href="http://spaceappsnextgen.com/favicon.ico"/>
+
+		<style>
+			#footer {
+			
+				<!-- font-family: 'Orienta', sans-serif; -->
+				font-size: 22px;
+				text-align: center;
+				width: 100%;
+				height: 40px;
+				<!-- color: #000000; -->
+				<!-- background: white; -->
+			}
+			.ui-page .ui-navbar{
+				width: 4000px;
+			}
+			.ui-page{
+				background: #FFFFFF;
+				padding-left: 0px;
+				
+			}
+			.ui-page .ui-header{
+				background: #0B0B3B;
+			}
+			.ui-btn{
+				background: #08298A;
+				color: #FFFFFF;
+				text-shadow: 2px 2px #000000;
+			}
+			.ui-page .ui-footer{
+				background: #0B0B3B;
+			}
+			p{
+				color: #0B0B3B;
+			}
+			#header{
+				font-family: 'Amatic SC', cursive;
+				font-size: 35px;
+				color: #FFFFFF;
+				text-align: center;
+				background: url("http://lflevents.org/wp-content/uploads/2014/09/wallpaper-stars-nightnight-sky-hd-wallpapers-nature-night-sky-wallpapers-for-rufb6m96.jpg") no-repeat center center fixed; 
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+			}
+			h2{
+				color: #0B0B3B;
+				font-size: 19px;
+			}
+			h3{
+				color: #0B0B3B;
+			}
+			h4{
+				color: #0B0B3B;
+			}
+
+		</style>
+	</script>
+  </head>
+  <body>
+
+  <!-- ------------------------------ HOME  ------------------------------ -->
+			
+	<div data-role = "page" id = "home">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+						<center><big><a href="#home" style="color: white;font">Calendar</a></big></center>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content" id="calendar">
+				
+				<h2>Monday, August 31, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#moond">Moon Descending Node</a></li>
+					</ul>
+				</p>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#neptu">Neptune Opposition</a></li>
+					</ul>
+				</p>
+				<h2>Tuesday, September 01, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#venus">Venus</a></li>
+					</ul>
+				</p>
+				<h2>Friday, September 04, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#mercu">Mercury Elongation</a></li>
+					</ul>
+				</p>
+				<h2>Saturday, September 05, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#moona">Moon-Aldebaran</a></li>
+					</ul>
+				</p>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#lastq">Last Quarter</a></li>
+					</ul>
+				</p>
+				<h2>Sunday, September 06, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#moonn">Moon North Dec.</a></li>
+					</ul>
+				</p>
+				<h2>Thursday, September 10, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#moonv">Moon-Venus</a></li>
+					</ul>
+				</p>
+				<h2>Sunday, September 13, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#newmo">New Moon</a></li>
+					</ul>
+				</p>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#parti">Partial Solar Eclipse</a></li>
+					</ul>
+				</p>
+				<h2>Monday, September 14, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#moonas">Moon Ascending Node</a></li>
+					</ul>
+				</p>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#moonap">Moon Apogee</a></li>
+					</ul>
+				</p>
+				<h2>Friday, September 18, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#moons">Moon-Saturn</a></li>
+					</ul>
+				</p>
+				<h2>Monday, September 21, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#first">First Quarter</a></li>
+					</ul>
+				</p>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#moonso">Moon South Dec.</a></li>
+					</ul>
+				</p>
+				<h2>Wednesday, September 23, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#autum">Autumnal Equinox</a></li>
+					</ul>
+				</p>
+				<h2>Thursday, September 24, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#marsr">Mars-Regulus</a></li>
+					</ul>
+				</p>
+				<h2>Sunday, September 27, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#moonde">Moon Descending Node</a></li>
+					</ul>
+				</p>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#moonpe">Moon Perigee</a></li>
+					</ul>
+				</p>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#total">Total Lunar Eclipse</a></li>
+					</ul>
+				</p>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#fullm">Full Moon</a></li>
+					</ul>
+				</p>
+				<h2>Wednesday, September 30, 2015</h2>
+				<p>
+					<ul style="color: #0B0B3B;">
+						<li><a href="#mercur">Mercury Inferior Conj.</a></li>
+					</ul>
+				</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+
+	<!-- PAGE1 -->
+	<div data-role = "page" id = "moond">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+			<style>
+				table, th, td {
+					border: 0px solid black;
+					border-collapse: collapse;
+				}
+				th, td {
+					padding: 5px;
+					text-align: left;    
+				}
+			</style>
+			<table style="width:100%" border="0">
+				<th><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Lunar_eclipse_diagram-en.svg/2000px-Lunar_eclipse_diagram-en.svg.png" alt="Descending" style="width:275px;height:200px;"></th>
+				<th colspan="2"><b><h3>Moon Descending Node</h3></b>
+				<h5>Monday, August 31, 2015</h5>
+				<h5>06:16 AM</h5>
+				<p>Where the moon crosses from north of the ecliptic to south of the ecliptic.</p></th>
+			</table>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE2 -->
+	<div data-role = "page" id = "neptu">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>	
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<style>
+				table, th, td {
+		border: 0px solid black;
+		border-collapse: collapse;
+	}
+	th, td {
+		padding: 5px;
+		text-align: left;    
+	}
+				</style>
+				<table style="100%">
+				<th><img src="http://planet-neptune.net/images/OppositionNeptune.jpg" alt="Opposition" style="width:200px;height:200px;"></th>
+				<th colspan="2"><b><h3>Neptune Opposition</h3></b>
+				<h5>Monday, August 31, 2015</h5>
+				<h5>10:12 PM</h5>
+				<p>It will be visible for much of the night, reaching its highest point in the sky at around midnight local time.</p></th>
+				</table>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE3 -->
+	<div data-role = "page" id = "venus">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<style>
+				table, th, td {
+					border: 0px solid black;
+					border-collapse: collapse;
+				}
+				th, td {
+					padding: 5px;
+					text-align: left;    
+				}
+				</style>
+				<table style="100%">
+					<th><img src="http://i.space.com/images/i/000/044/659/iFF/january-2015-venus.jpg?1420229906" alt="Venus"></th>
+					<th colspan="2"><b><h3>Venus</h3></b>
+				<h5>Tuesday, September 01, 2015</h5>
+				<h5>---</h5>
+				<p>Rises two hours before the Sun and becomes easily visible.</p></th>
+				</table>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE4 -->
+	<div data-role = "page" id = "mercu">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Mercury Elongation</h3></b>
+				<h5>Friday, September 04, 2015</h5>
+				<h5>05:59 AM</h5>
+				<p>When Mercury is visible after sunset.</p>
+				
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE5 -->
+	<div data-role = "page" id = "moona">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Moon-Aldebaran</h3></b>
+				<h5>Saturday, September 05, 2015</h5>
+				<h5>01:09 AM</h5>
+				<p>The moon goes in front of and hides the star (Aldebaran) for a portion of the night.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE6 -->
+	<div data-role = "page" id = "lastq">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Last Quarter</h3></b>
+				<h5>Saturday, September 05, 2015</h5>
+				<h5>05:54 AM</h5>
+				<p>Moon appears half-illuminated. Rises around midnight and is at its highest at dawn.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE7 -->
+	<div data-role = "page" id = "moonn">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Moon North Dec.</h3></b>
+				<h5>Sunday, September 06, 2015</h5>
+				<h5>01:06 PM</h5>
+				<p>When the moon is most visible.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE8 -->
+	<div data-role = "page" id = "moonv">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Moon-Venus</h3></b>
+				<h5>Thursday, September 10, 2015</h5>
+				<h5>01:53 AM</h5>
+				<p>Moon and Venus are visible before the sun rises.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE9 -->
+	<div data-role = "page" id = "newmo">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>New Moon</h3></b>
+				<h5>Sunday, September 13, 2015</h5>
+				<h5>02:41 AM</h5>
+				<p>Moon is eclipsed.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE10 -->
+	<div data-role = "page" id = "parti">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Partial Solar Eclipse</h3></b>
+				<h5>Sunday, September 13, 2015</h5>
+				<h5>02:55 AM</h5>
+				<p>The Moon comes between the Sun and the Earth, but they don't align in a perfectly straight line. Because of this, the Moon only partially covers the Sun's disc.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE11 -->
+	<div data-role = "page" id = "moonas">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Moon Ascending Node</h3></b>
+				<h5>Monday, September 14, 2015</h5>
+				<h5>00:38 AM</h5>
+				<p>The Sun rises in the south-east to set in the south-west, describing a smallish arc in the sky.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+	</div>
+	<!-- PAGE12 -->
+	<div data-role = "page" id = "moonap">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Moon Apogee</h3></b>
+				<h5>Monday, September 14, 2015</h5>
+				<h5>07:28 AM</h5>
+				<p>When the moon is farthest from the Sun.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE13 -->
+	<div data-role = "page" id = "moons">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Moon-Saturn</h3></b>
+				<h5>Friday, September 18, 2015</h5>
+				<h5>10:54 PM</h5>
+				<p>When Saturn is the easiest planet to see.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE14 -->
+	<div data-role = "page" id = "first">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>First Quarter</h3></b>
+				<h5>Monday, September 21, 2015</h5>
+				<h5>04:59 AM</h5>
+				<p>The first fourth of the Moon's period of revolution around the Earth.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE15 -->
+	<div data-role = "page" id = "moonso">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Moon South Dec.</h3></b>
+				<h5>Monday, September 21, 2015</h5>
+				<h5>08:02 AM</h5>
+				<p>When the moon is least visible.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE16 -->
+	<div data-role = "page" id = "autum">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Autumnal Equinox</h3></b>
+				<h5>Wednesday, September 23, 2015</h5>
+				<h5>04:20 AM</h5>
+				<p>When there's an equal amount of sunlight and night time.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE17 -->
+	<div data-role = "page" id = "marsr">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Mars-Regulus></h3></b>
+				<h5>Thursday, September 24, 2015</h5>
+				<h5>03:38 PM</h5>			
+				<p>Mars passes 1.4 degrees north of the bright star Regulus, appearing less than three moon widths away from the star.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE18 -->
+	<div data-role = "page" id = "moonde">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Moon Descending Node</h3></b>
+				<h5>Sunday, September 27, 2015</h5>
+				<h5>05:04 PM</h5>
+				<p>The moon crosses from north of the ecliptic to south of the ecliptic.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE19 -->
+	<div data-role = "page" id = "moonpe">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Moon Perigee</h3></b>
+				<h5>Sunday, September 27, 2015</h5>
+				<h5>09:46 PM</h5>
+				<p>When the moon is closest.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE20 -->
+	<div data-role = "page" id = "total">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Total Lunar Eclipse</h3></b>
+				<h5>Sunday, September 27, 2015</h5>
+				<h5>10:48 PM</h5>
+				<p>When the moon is directly behind the Earths shadow.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE21 -->
+	<div data-role = "page" id = "fullm">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Full Moon</h3></b>
+				<h5>Sunday, September 27, 2015</h5>
+				<h5>10:48 PM</h5>
+				<p>When the moon can be fully seen and is illuminated. </p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+	<!-- PAGE22 -->
+	<div data-role = "page" id = "mercur">	
+		
+			<div data-role="header" id="header">
+				SkyFind
+				<div data-role="navbar" id = "navbar">
+					<a href="#home" style="color: white">Back to Calendar</a>
+				</div>
+			</div>
+			
+			<div role="main" class="ui-content">
+				<b><h3>Mercury Inferior Conj.</h3></b>
+				<h5>Wednesday, September 30, 2015</h5>
+				<h5>10:36 AM</h5>
+				<p>When Mercury is unobservable because it is in the suns glare.</p>
+			</div>
+
+			<div data-role="footer" id="footer">
+					<h6>   </h6>
+			</div>
+		
+	</div>
+
+
+
+		
+  </body>
+</html>
